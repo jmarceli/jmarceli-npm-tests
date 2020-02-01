@@ -4,7 +4,9 @@
   "description": "Tests with npm publishing",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run test:success",
+    "test:success": "echo \"All tests are OK\" && exit 0",
+    "test:fail": "echo \"All tests are OK\" && exit 1"
   },
   "keywords": [
     "test",

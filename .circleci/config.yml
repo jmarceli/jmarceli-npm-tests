@@ -1,0 +1,21 @@
+version: 2.1
+
+jobs:
+  run_tests:
+    docker:
+      - image: circleci/node:10.18.1
+        environment:
+          TERM: xterm
+    steps:
+      - checkout
+      - run:
+          command: npm install
+      - run:
+          command: npm version prerelease --preid={{ .Revision }} && npm publish
+      - run:
+          command: npm run test
+
+workflows:
+  tests:
+    jobs:
+      - run_tests
