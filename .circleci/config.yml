@@ -12,10 +12,16 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install dependencies
           command: npm install
       - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+      - run:
+          name: Publish prerelease version
           command: TESTED_VERSION=$(npm version prerelease --preid=ci) && npm publish
       - run:
+          name: Run tests using published prerelease version
           command: cd test && npm i jmarceli-npm-tests@${TESTED_VERSION} && npm run test
 
 workflows:
