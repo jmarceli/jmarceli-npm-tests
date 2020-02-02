@@ -10,6 +10,9 @@ jobs:
           GIT_AUTHOR_NAME: CircleCI
           GIT_COMMITTER_NAME: CircleCI
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - 'ef:b4:5c:0b:93:19:ea:c8:27:92:aa:fa:b9:4e:2a:b3'
       - checkout
       - run:
           name: Install dependencies
