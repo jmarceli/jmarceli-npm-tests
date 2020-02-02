@@ -6,6 +6,9 @@ jobs:
       - image: circleci/node:10.18.1
         environment:
           TERM: xterm
+          EMAIL: circleci@test.test
+          GIT_AUTHOR_NAME: CircleCI
+          GIT_COMMITTER_NAME: CircleCI
     steps:
       - checkout
       - run:
