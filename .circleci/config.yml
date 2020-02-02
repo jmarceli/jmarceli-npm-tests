@@ -22,7 +22,7 @@ jobs:
           command: TESTED_VERSION=$(npm version prerelease --preid=ci) && npm publish
       - run:
           name: Run tests using published prerelease version
-          command: cd test && npm i jmarceli-npm-tests@${TESTED_VERSION} && npm run test
+          command: echo "${TESTED_VERSION}" && cd test && npm install jmarceli-npm-tests@${TESTED_VERSION} && npm ls
 
 workflows:
   tests:
