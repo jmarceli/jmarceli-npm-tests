@@ -11,9 +11,9 @@ jobs:
       - run:
           command: npm install
       - run:
-          command: npm version prerelease --preid={{ .Revision }} && npm publish
+          command: TESTED_VERSION=$(npm version prerelease --preid=ci) && npm publish
       - run:
-          command: npm run test
+          command: cd test && npm i jmarceli-npm-tests@${TESTED_VERSION} && npm run test
 
 workflows:
   tests:
