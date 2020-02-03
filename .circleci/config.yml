@@ -22,7 +22,7 @@ jobs:
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/project/.npmrc
       - run:
           name: Publish prerelease version
-          command: TESTED_VERSION=$(npm version prerelease --preid=ci) && git push && npm publish
+          command: TESTED_VERSION=$(npm version prerelease --preid=ci) && git commit --amend -m "$TESTED_VERSION [ci skip]" && git push && npm publish
       - run:
           name: Run tests using published prerelease version
           command: echo "${TESTED_VERSION}" && cd test && npm install jmarceli-npm-tests@${TESTED_VERSION} && npm ls
