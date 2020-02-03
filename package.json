@@ -1,6 +1,6 @@
 {
   "name": "jmarceli-npm-tests",
-  "version": "0.0.7-569d288.0",
+  "version": "0.0.8",
   "description": "Tests with npm publishing",
   "main": "index.js",
   "scripts": {
