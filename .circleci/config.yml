@@ -18,7 +18,7 @@ jobs:
           name: Install dependencies
           command: npm install
       - run:
-          name: Authenticate with registry
+          name: Authenticate with registry token
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/project/.npmrc
       - run:
           name: Publish prerelease version
