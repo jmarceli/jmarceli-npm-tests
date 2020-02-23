@@ -10,7 +10,8 @@
   },
   "keywords": [
     "test",
-    "npm"
+    "npm",
+    "dist-tag"
   ],
   "author": "Jan Grzegorowski",
   "license": "MIT"
