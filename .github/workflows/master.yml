@@ -24,7 +24,7 @@
 #           DEFAULT_BRANCH: master
 #           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-name: PR validation
+name: master build
 
 on:
   push:

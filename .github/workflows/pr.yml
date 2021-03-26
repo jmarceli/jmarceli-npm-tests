@@ -1,4 +1,4 @@
-name: PR validation
+name: feature branch validation
 
 on:
   # push:
