@@ -23,3 +23,44 @@ jobs:
         env:
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+# version: 2.1
+
+# jobs:
+#   run_tests:
+#     docker:
+#       - image: circleci/node:10.18.1
+#         environment:
+#           TERM: xterm
+#           GIT_AUTHOR_NAME: CircleCI
+#           GIT_COMMITTER_NAME: CircleCI
+#     steps:
+#       - add_ssh_keys:
+#           fingerprints:
+#             - 'ef:b4:5c:0b:93:19:ea:c8:27:92:aa:fa:b9:4e:2a:b3'
+#       - checkout
+#       - run:
+#           name: Install dependencies
+#           command: npm install
+#       - run:
+#           name: Authenticate with registry token
+#           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/project/.npmrc
+#       - run:
+#           name: Publish prerelease version
+#           command: TESTED_VERSION=$(npm version prerelease --preid=ci)
+#       - run:
+#           name: Prevent CI running after adding a test version
+#           command: git commit --amend -m "$TESTED_VERSION [ci skip]"
+#       - run:
+#           name: Push and publish to test tag
+#           command: git push && npm publish --tag test
+#       - run:
+#           name: Install published prereleased test version
+#           command: cd test && npm install jmarceli-npm-tests@${TESTED_VERSION}
+#       # - run:
+#       #     name: Run tests
+#       #     command: cd test && npm test
+
+# workflows:
+#   tests:
+#     jobs:
+#       - run_tests
