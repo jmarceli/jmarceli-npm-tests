@@ -1,4 +1,4 @@
-name: feature branch validation
+name: Feature branch validation
 
 on:
   # push:
@@ -23,4 +23,16 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm run build --if-present
-      - run: npm test
+
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x]
+
+    steps:
+      - name: Test
+        run: npm test
+        with:
+          node-version: ${{ matrix.node-version }}

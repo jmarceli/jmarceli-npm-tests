@@ -24,7 +24,7 @@
 #           DEFAULT_BRANCH: master
 #           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-name: master build
+name: Master build
 
 on:
   push:
@@ -50,6 +50,7 @@ jobs:
     steps:
       - name: Test
         run: npm test
+
   publish:
     runs-on: ubuntu-latest
 
