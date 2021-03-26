@@ -34,5 +34,3 @@ jobs:
     steps:
       - name: Test
         run: npm test
-        with:
-          node-version: ${{ matrix.node-version }}
